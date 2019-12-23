@@ -23,10 +23,8 @@ public class Main {
         }
     }
     static void swi(int ch,List<Task> li) throws ParseException {
-
+    TaskManager tm=new TaskManager();
     Scanner sc=new Scanner(System.in);
-
-
 
         switch (ch){
             case 1:
@@ -40,23 +38,23 @@ public class Main {
                 System.out.println("Enter Status(CREATED|IN_PROGRESS|DONE):");
                 taskStatus stat=taskStatus.valueOf(sc.nextLine());
                 Task t=new Task(n,des,d,stat);
-                ToAdd(t,li);
+                tm.ToAdd(t,li);
                 break;
             case 2:
-                ToDisplayList(li);
+                tm.ToDisplayList(li);
                 break;
             case 3:
                 System.out.println("Enter name to delete:");
                 String s=sc.next();
                 System.out.println(s + " is deleted");
-                ToDelete(s, li);
+                tm.ToDelete(s, li);
 //                else
 //                    System.out.println("No such task");
                 break;
             case 4:
                 System.out.println("Enter name to Search:");
                 String a=sc.next();
-                if(ToSearch(a,li))
+                if(tm.ToSearch(a,li))
                     System.out.println("Task "+a+" Found!");
                 else
                     System.out.println("No such task!");
@@ -67,34 +65,4 @@ public class Main {
                 System.out.println("Invalid Input");
         }
     }
-    static void ToAdd(Task t,List<Task> li) throws ParseException {
-
-        li.add(t);
-       // System.out.println("hey");
-    }
-    static void ToDisplayList(List<Task> li){
-
-        for (Task str:li) {
-            System.out.println(str);
-
-        }
-    }
-    static void ToDelete(String s,List<Task> li){
-        for(Task x:li){
-            if(x.getName().equals(s)){
-                li.remove(x);
-                break;
-            }
-        }
-    }
-    static boolean ToSearch(String name,List<Task> li){
-        for(Task x:li){
-            if(x.getName().equals(name)){
-                System.out.println(x);
-                return true;
-            }
-        }
-        return false;
-    }
-
 }
