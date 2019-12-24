@@ -16,7 +16,7 @@ public class Main {
         List<Task> li=new ArrayList<>();
         while(true){
             System.out.println("Enter number choice");
-            System.out.println("1.ToAdd\t2.ToDisplayList\t3.ToDelete\t4.ToSearch\t5.Exit");
+            System.out.println("1.ToAdd\t2.ToDisplayList\t3.ToDelete\t4.ToSearch\t5.listByStatus\t6.Exit");
             int ch=sc.nextInt();
             swi(ch,li);
 
@@ -60,6 +60,11 @@ public class Main {
                     System.out.println("No such task!");
                 break;
             case 5:
+                System.out.println("Enter Status: ");
+                tm.listByStatus(taskStatus.valueOf(sc.next()),li);
+
+                break;
+            case 6:
                 System.exit(0);
             default:
                 System.out.println("Invalid Input");

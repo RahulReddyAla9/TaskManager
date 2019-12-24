@@ -33,4 +33,11 @@ public class TaskManager {
         }
         return false;
     }
+    public void listByStatus(taskStatus status,List<Task> li){
+              for(Task i:li){
+                  if(i.getStatus().equals(status)){
+                      System.out.println(i);
+                  }
+              }
+    }
 }
