@@ -4,27 +4,38 @@ package com.RahulReddy;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-enum taskStatus{CREATED,IN_PROGRESS,DONE;}
+
 
 class Task {
+    private int id;
     private String name;
-    private String details;
+    private String description;
     private Date dueDate;
-    private taskStatus status;
+    private TaskStatus status;
 
 
     //private TaskStatus status;
-    Task(String name, String details, Date dueDate, taskStatus status) {
+    Task(int id, String name, String description, Date dueDate, TaskStatus status) {
+        this.id=id;
         this.name = name;
-        this.details = details;
+        this.description = description;
         this.dueDate = dueDate;
         this.status=status;
     }
-    public taskStatus getStatus() {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public TaskStatus getStatus() {
         return status;
     }
 
-    public void setStatus(taskStatus status) {
+    public void setStatus(TaskStatus status) {
         this.status = status;
     }
 
@@ -36,12 +47,12 @@ class Task {
         this.name = name;
     }
 
-    public String getDetails() {
-        return details;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getDueDate() {
@@ -55,9 +66,10 @@ class Task {
     @Override
     public String toString() {
         SimpleDateFormat time=new SimpleDateFormat("dd/MM/yyyy");
-        return "Task{" +
-                "name='" + name + '\'' +
-                ", details='" + details + '\'' +
+        return "Task" +
+                 + id +
+                " { name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", dueDate=" + time.format(dueDate) +
                 ", status=" + status +
                 '}';

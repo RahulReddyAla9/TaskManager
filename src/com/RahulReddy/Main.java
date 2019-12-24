@@ -2,72 +2,117 @@ package com.RahulReddy;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
+    public static int Task_id=1;
+    public static int countTasks=0;
     public static void main(String[] args) throws ParseException {
         //System.out.println("hey");
-        Scanner sc=new Scanner(System.in);
-
-        List<Task> li=new ArrayList<>();
+        Scanner scanner=new Scanner(System.in);
+        TaskManager taskManager=new TaskManager();
         while(true){
+            System.out.println("-------------------------------------------------" +
+                    "------------------------------------------------------------");
             System.out.println("Enter number choice");
-            System.out.println("1.ToAdd\t2.ToDisplayList\t3.ToDelete\t4.ToSearch\t5.listByStatus\t6.Exit");
-            int ch=sc.nextInt();
-            swi(ch,li);
+            System.out.println("1.ToAdd\t2.ToDisplayList\t3.ToDelete" +
+                    "\t4.ToSearchById\t5.listByStatus\t6.DisplayById" +
+                    "\t7.updateStatus\t8.Exit");
+            int choice=scanner.nextInt();
+            selection(choice,taskManager);
 
         }
     }
-    static void swi(int ch,List<Task> li) throws ParseException {
-    TaskManager tm=new TaskManager();
-    Scanner sc=new Scanner(System.in);
+    static void selection(int choice,TaskManager taskManager) throws ParseException {
+    Scanner scanner=new Scanner(System.in);
 
-        switch (ch){
+        switch (choice){
             case 1:
                 System.out.println("Enter name to add:");
-              //  Scanner sc=new Scanner(System.in);
-                String n=sc.nextLine();
+                String name=scanner.nextLine();
+                //System.out.println("No such task!");
                 System.out.println("Enter details:");
-                String des=sc.nextLine();
+                String description=scanner.nextLine();
                 System.out.println("Enter Date in dd/mm/yyyy format:");
-                Date d=new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
+                Date date=new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
                 System.out.println("Enter Status(CREATED|IN_PROGRESS|DONE):");
-                taskStatus stat=taskStatus.valueOf(sc.nextLine());
-                Task t=new Task(n,des,d,stat);
-                tm.ToAdd(t,li);
+                TaskStatus status= TaskStatus.valueOf(scanner.nextLine());
+                Task task=new Task(Task_id++,name,description,date,status);
+                taskManager.toAddTask(task);
+                countTasks++;
+                System.out.println("\n\nTotalTasks: "+countTasks);
                 break;
             case 2:
-                tm.ToDisplayList(li);
+                List<Task> list=taskManager.toDisplayTask();
+                displayAllDetails(list);
+                System.out.println("\n\nTotalTasks: "+countTasks);
                 break;
             case 3:
-                System.out.println("Enter name to delete:");
-                String s=sc.next();
-                System.out.println(s + " is deleted");
-                tm.ToDelete(s, li);
-//                else
-//                    System.out.println("No such task");
+                System.out.println("Enter id to delete:");
+                int id=scanner.nextInt();
+                System.out.println(id + " is deleted");
+                taskManager.toDeleteTask(id);
+                countTasks--;
+                System.out.println("\n\nTotalTasks: "+countTasks);
                 break;
             case 4:
-                System.out.println("Enter name to Search:");
-                String a=sc.next();
-                if(tm.ToSearch(a,li))
-                    System.out.println("Task "+a+" Found!");
-                else
+                System.out.println("Enter id to Search:");
+                int Id=scanner.nextInt();
+                Task listOfTasks=taskManager.toSearchById(Id);
+                if(listOfTasks==null) {
                     System.out.println("No such task!");
+                }
+                else {
+                    System.out.println("Task " + Id + " Found!");
+                    System.out.println(listOfTasks);
+
+                }
+                System.out.println("\n\nTotalTasks: " + countTasks);
                 break;
             case 5:
                 System.out.println("Enter Status: ");
-                tm.listByStatus(taskStatus.valueOf(sc.next()),li);
-
+                List<Task> listOfStatus=taskManager.listByStatus(TaskStatus.valueOf(scanner.next()));
+                displayAllDetails(listOfStatus);
+                System.out.println("\n\nTotalTasks: "+countTasks);
                 break;
             case 6:
+                List<Task> listByIdAndName= taskManager.toDisplayTask();
+                displayIdAndName(listByIdAndName);
+                System.out.println("\n\nTotalTasks: "+countTasks);
+                break;
+            case 7:
+                System.out.println("Enter Task id: ");
+                int iD=scanner.nextInt();
+                System.out.println("Enter Status to be Updated: ");
+                String str=scanner.next();
+                taskManager.updateStatus(iD,TaskStatus.valueOf(str));
+                System.out.println("\nSTATUS has been Updated!");
+                break;
+            case 8:
                 System.exit(0);
             default:
                 System.out.println("Invalid Input");
+        }
+
+    }
+    public static void displayAllDetails(List<Task> list){
+        if(list.size()==0) {
+            System.out.println("No tasks!");
+        }
+        else {
+            for (Task t : list) {
+                System.out.println(t);
+            }
+        }
+    }
+    public static void displayIdAndName(List<Task> list){
+        for(Task t: list){
+            System.out.println("Task: "+t.getId()+
+                    "\nName: "+t.getName());
         }
     }
 }

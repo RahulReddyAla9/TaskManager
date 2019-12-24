@@ -1,43 +1,29 @@
 package com.RahulReddy;
 
-import java.text.ParseException;
+import java.net.Inet4Address;
+import java.util.ArrayList;
 import java.util.List;
 
-public class TaskManager {
-    static void ToAdd(Task t, List<Task> li) throws ParseException {
+class TaskManager {
+    InMemoryTaskRepository repository=new InMemoryTaskRepository();
 
-        li.add(t);
-        // System.out.println("hey");
+    public void toAddTask(Task task) {
+        repository.toAddTask(task);
     }
-    static void ToDisplayList(List<Task> li){
-
-        for (Task str:li) {
-            System.out.println(str);
-
-        }
+    public List<Task> toDisplayTask(){
+        return repository.toDisplayTask();
     }
-    static void ToDelete(String s,List<Task> li){
-        for(Task x:li){
-            if(x.getName().equals(s)){
-                li.remove(x);
-                break;
-            }
-        }
+    public void toDeleteTask(int taskId){
+        repository.toDeleteTask(taskId);
     }
-    static boolean ToSearch(String name,List<Task> li){
-        for(Task x:li){
-            if(x.getName().equals(name)){
-                System.out.println(x);
-                return true;
-            }
-        }
-        return false;
+    public Task toSearchById(int taskId){
+        return repository.toSearchById(taskId);
     }
-    public void listByStatus(taskStatus status,List<Task> li){
-              for(Task i:li){
-                  if(i.getStatus().equals(status)){
-                      System.out.println(i);
-                  }
-              }
+    public List<Task> listByStatus(TaskStatus status){
+        return repository.listByStatus(status);
+    }
+    public void updateStatus(int taskId,TaskStatus status) {
+        repository.updateStatus(taskId, status);
     }
 }
+

@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7916c301-a546-4ea7-9b64-4de936071343" name="Default Changelist" comment="2nd">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/taskStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/taskStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/TaskManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/taskStatus.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -99,37 +104,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="2nd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1577100073661">
+    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1577169532075">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1577100073661" />
+    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1577169532075" />
     <state x="287" y="27" width="782" height="741" key="CommitChangelistDialog2" timestamp="1577103789439">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="287" y="27" width="782" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1577103789439" />
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom" timestamp="1577162273921">
+    <state width="1320" height="560" key="GridCell.Tab.0.bottom" timestamp="1577182303000">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577162273921" />
-    <state width="1320" height="560" key="GridCell.Tab.0.center" timestamp="1577162273920">
+    <state width="1320" height="560" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
+    <state width="1320" height="560" key="GridCell.Tab.0.center" timestamp="1577182303000">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577162273920" />
-    <state width="1320" height="560" key="GridCell.Tab.0.left" timestamp="1577162273920">
+    <state width="1320" height="560" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
+    <state width="1320" height="560" key="GridCell.Tab.0.left" timestamp="1577182302999">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577162273920" />
-    <state width="1320" height="560" key="GridCell.Tab.0.right" timestamp="1577162273920">
+    <state width="1320" height="560" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577182302999" />
+    <state width="1320" height="560" key="GridCell.Tab.0.right" timestamp="1577182303000">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577162273920" />
+    <state width="1320" height="560" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
     <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1577161228197">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577161228197" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577099151300">
+    <state x="336" y="27" width="683" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577182841722">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1577099151300" />
+    <state x="336" y="27" width="683" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1366.741@0.27.1366.741" timestamp="1577182841722" />
+    <state x="347" y="175" key="run.anything.popup" timestamp="1577187311117">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="347" y="175" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1577187311117" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577186957706">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1577186957706" />
   </component>
 </project>
