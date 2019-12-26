@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7916c301-a546-4ea7-9b64-4de936071343" name="Default Changelist" comment="2nd">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/TaskManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/task_management/com/RahulReddy/taskStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/InMemoryTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/InMemoryTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/RahulReddy/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/RahulReddy/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/task_management.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -38,6 +36,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jackson-annotations-2.10.1.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -104,34 +106,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="2nd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1577169532075">
+    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1577351313319">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1577169532075" />
+    <state x="491" y="101" width="544" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1577351313319" />
     <state x="287" y="27" width="782" height="741" key="CommitChangelistDialog2" timestamp="1577103789439">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="287" y="27" width="782" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1577103789439" />
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom" timestamp="1577182303000">
+    <state x="100" y="125" width="1166" height="543" key="DiffContextDialog" timestamp="1577335330037">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
-    <state width="1320" height="560" key="GridCell.Tab.0.center" timestamp="1577182303000">
+    <state x="100" y="125" width="1166" height="543" key="DiffContextDialog/0.27.1366.741@0.27.1366.741" timestamp="1577335330037" />
+    <state x="461" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577333502230">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
-    <state width="1320" height="560" key="GridCell.Tab.0.left" timestamp="1577182302999">
+    <state x="461" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1577333502230" />
+    <state width="1320" height="560" key="GridCell.Tab.0.bottom" timestamp="1577352248432">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577182302999" />
-    <state width="1320" height="560" key="GridCell.Tab.0.right" timestamp="1577182303000">
+    <state width="1320" height="560" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577352248432" />
+    <state width="1320" height="560" key="GridCell.Tab.0.center" timestamp="1577352248430">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577182303000" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1577161228197">
+    <state width="1320" height="560" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577352248430" />
+    <state width="1320" height="560" key="GridCell.Tab.0.left" timestamp="1577352248429">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577161228197" />
+    <state width="1320" height="560" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577352248429" />
+    <state width="1320" height="560" key="GridCell.Tab.0.right" timestamp="1577352248431">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="560" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577352248431" />
+    <state x="166" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1577333508416">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="166" y="27" width="1024" height="741" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1577333508416" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1577333306078">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577333306078" />
     <state x="336" y="27" width="683" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577182841722">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

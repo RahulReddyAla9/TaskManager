@@ -3,25 +3,22 @@ package com.RahulReddy;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static int Task_id=1;
-    public static int countTasks=0;
+    public static int Task_id;
     public static void main(String[] args) throws ParseException {
         //System.out.println("hey");
         Scanner scanner=new Scanner(System.in);
         TaskManager taskManager=new TaskManager();
         while(true){
             System.out.println("-------------------------------------------------" +
-                    "------------------------------------------------------------");
+                    "------------------------------------------------------------" +
+                    "----------------");
             System.out.println("Enter number choice");
             System.out.println("1.ToAdd\t2.ToDisplayList\t3.ToDelete" +
                     "\t4.ToSearchById\t5.listByStatus\t6.DisplayById" +
-                    "\t7.updateStatus\t8.Exit");
+                    "\t7.updateStatus\t8.getPendingTasks\t9.Today's Tasks\t10.Exit");
             int choice=scanner.nextInt();
             selection(choice,taskManager);
 
@@ -31,7 +28,7 @@ public class Main {
     Scanner scanner=new Scanner(System.in);
 
         switch (choice){
-            case 1:
+            case 1://add task
                 System.out.println("Enter name to add:");
                 String name=scanner.nextLine();
                 //System.out.println("No such task!");
@@ -41,23 +38,22 @@ public class Main {
                 Date date=new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
                 System.out.println("Enter Status(CREATED|IN_PROGRESS|DONE):");
                 TaskStatus status= TaskStatus.valueOf(scanner.nextLine());
-                Task task=new Task(Task_id++,name,description,date,status);
+                Task_id=100000 + new Random().nextInt(900000);
+                Task task=new Task(Task_id,name,description,date,status);
                 taskManager.toAddTask(task);
-                countTasks++;
-                System.out.println("\n\nTotalTasks: "+countTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
                 break;
-            case 2:
+            case 2://display all tasks
                 List<Task> list=taskManager.toDisplayTask();
                 displayAllDetails(list);
-                System.out.println("\n\nTotalTasks: "+countTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
                 break;
-            case 3:
+            case 3://
                 System.out.println("Enter id to delete:");
                 int id=scanner.nextInt();
                 System.out.println(id + " is deleted");
                 taskManager.toDeleteTask(id);
-                countTasks--;
-                System.out.println("\n\nTotalTasks: "+countTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
                 break;
             case 4:
                 System.out.println("Enter id to Search:");
@@ -71,18 +67,18 @@ public class Main {
                     System.out.println(listOfTasks);
 
                 }
-                System.out.println("\n\nTotalTasks: " + countTasks);
+                System.out.println("\n\nTotalTasks: " + taskManager.totalTasks());
                 break;
             case 5:
                 System.out.println("Enter Status: ");
                 List<Task> listOfStatus=taskManager.listByStatus(TaskStatus.valueOf(scanner.next()));
                 displayAllDetails(listOfStatus);
-                System.out.println("\n\nTotalTasks: "+countTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
                 break;
             case 6:
                 List<Task> listByIdAndName= taskManager.toDisplayTask();
                 displayIdAndName(listByIdAndName);
-                System.out.println("\n\nTotalTasks: "+countTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
                 break;
             case 7:
                 System.out.println("Enter Task id: ");
@@ -93,6 +89,18 @@ public class Main {
                 System.out.println("\nSTATUS has been Updated!");
                 break;
             case 8:
+                System.out.println("Displaying Pending Tasks: \n");
+                List<Task> pendingTasks=taskManager.getPendingTasks();
+                displayAllDetails(pendingTasks);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
+                break;
+            case 9:
+                System.out.println("gettingToday's Tasks: ");
+                List<Task> today= taskManager.getTodayTasks();
+                displayAllDetails(today);
+                System.out.println("\n\nTotalTasks: "+taskManager.totalTasks());
+                break;
+            case 10:
                 System.exit(0);
             default:
                 System.out.println("Invalid Input");
@@ -104,6 +112,7 @@ public class Main {
             System.out.println("No tasks!");
         }
         else {
+          //  System.out.println(list);
             for (Task t : list) {
                 System.out.println(t);
             }

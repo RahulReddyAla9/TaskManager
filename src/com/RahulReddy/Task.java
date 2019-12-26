@@ -5,16 +5,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-
-class Task {
+class Task implements Comparable<Task>{
     private int id;
     private String name;
     private String description;
     private Date dueDate;
     private TaskStatus status;
 
+    //Constructor
+    public Task(){ }
 
-    //private TaskStatus status;
+    //Another Constructor
     Task(int id, String name, String description, Date dueDate, TaskStatus status) {
         this.id=id;
         this.name = name;
@@ -73,5 +74,15 @@ class Task {
                 ", dueDate=" + time.format(dueDate) +
                 ", status=" + status +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task task) {
+        if(this.getDueDate().compareTo(task.getDueDate())==0)
+            return 0;
+        else if(this.getDueDate().compareTo(task.getDueDate())<0)
+            return -1;
+        else
+            return 1;
     }
 }

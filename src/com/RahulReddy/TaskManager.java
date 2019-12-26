@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class TaskManager {
-    InMemoryTaskRepository repository=new InMemoryTaskRepository();
+    TaskRepository repository=new TaskFileRepository();
 
-    public void toAddTask(Task task) {
-        repository.toAddTask(task);
-    }
+    public void toAddTask(Task task) {repository.toAddTask(task); }
     public List<Task> toDisplayTask(){
         return repository.toDisplayTask();
     }
@@ -25,5 +23,8 @@ class TaskManager {
     public void updateStatus(int taskId,TaskStatus status) {
         repository.updateStatus(taskId, status);
     }
+    public int totalTasks(){return repository.totalTasks();}
+    public List<Task> getPendingTasks(){return repository.getPendingTasks(); }
+    public List<Task> getTodayTasks(){ return repository.getTodayTasks();}
 }
 
