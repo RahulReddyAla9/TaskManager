@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class TaskManager {
-    TaskRepository repository=new TaskFileRepository();
+    TaskRepository repository=new DataBaseRepository();
 
     public void toAddTask(Task task) {repository.toAddTask(task); }
     public List<Task> toDisplayTask(){
